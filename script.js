@@ -48,7 +48,7 @@ function getRecords() {
     title.innerHTML = y[x].text;
     // Account Ledger Records
     ssName = 'sheet=Posting1';
-    query = encodeURIComponent('select B,D,F,H,I,J,K,L where A="' + value + '" AND R <>"YES" AND U <>"YES"');
+    query = encodeURIComponent('select B,D,F,H,I,J,K,L where A="' + value + '" AND R <>"YES" AND U <>"YES" ORDER By D');
     endpoint = `${url}${ssID}${query1}&${q2}&${ssName}&tq=${query}`;
     fetch(endpoint)
         .then(res => res.text())
